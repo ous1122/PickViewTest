@@ -11,18 +11,17 @@ import UIKit
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
-    @IBOutlet weak var myLable: UILabel!
+    @IBOutlet weak var myLable: UILabel! //레이블지정
     @IBOutlet weak var myLabel: UILabel! //레이블 지정
     @IBOutlet weak var myPickView: UIPickerView! //피커뷰 지정
     
-    var color = ["white","black","red"]
-    var feeling = ["1","2","3","4"]
+    var color = ["white","black","red"] //메소드에 들어갈 객체들을 선언해준다.
+    var feeling = ["1","2","3","4"] //이하동문
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myPickView.delegate=self
         myPickView.dataSource=self
-        // Do any additional setup after loading the view, typically from a nib.
         //UiPickerViewDataSource 메소드(세로 나눔 기준)
         
     }
@@ -42,9 +41,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             
             
             if component == 0 {
-                return color[row]
+                return color[row] //위에서 선언해준 컬러를 메소드에 입력해준다.
             } else {
-                return feeling[row]
+                return feeling[row] //위에서 선언해준 feeling을 메소드에 입력해준다.
             }
             
             
@@ -57,9 +56,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == 0 {
-            myLabel.text = color[row]
+            myLabel.text = color[row] //데이터 피커에 적힌 메소드를 텍스트에 넣어준다.
         } else {
-            myLable.text = feeling[row]
+            myLable.text = feeling[row] //이하동문
         }
     
     
